@@ -1,1 +1,1 @@
-# vue__swapi
+# vue__star-wars--api
