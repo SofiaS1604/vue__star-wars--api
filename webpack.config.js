@@ -11,6 +11,9 @@ module.exports = {
     output: {
         publicPath: "/",
     },
+    devServer: {
+        historyApiFallback: true
+    },
     module: {
         rules: [
             {
@@ -54,13 +57,13 @@ module.exports = {
     plugins: [
         new VueLoaderPlugin(),
         new htmlWebpackPlugin({
-            template: path.join(__dirname, 'public', 'index.html'),
+            filename: path.join(__dirname, `dist`, `index.html`),
+            template: path.join(__dirname, `public`, `index.html`),
             inject: true,
-            env: 'development',
-            hash: true,
             minify: false
         }),
         new MiniCssExtractPlugin(),
         new CleanWebpackPlugin(),
-    ]
+    ],
+
 };

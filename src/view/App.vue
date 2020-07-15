@@ -1,13 +1,8 @@
 <template>
-    <h1>afgdgdfgdfg</h1>
+    <router-view/>
 </template>
-
 <script>
     export default {
-        name: "App"
-    }
+        name: 'App',
+    };
 </script>
-
-<style scoped>
-
-</style>
