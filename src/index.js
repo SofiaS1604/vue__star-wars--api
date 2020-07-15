@@ -6,6 +6,8 @@ import RootPage from './view/App.vue';
 
 let VueTouch = require('vue-touch');
 
+import style from './style/styles.styl'
+
 Vue.use(VueTouch, { name: 'v-touch' });
 Vue.use(VueRouter);
 

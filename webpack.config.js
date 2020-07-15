@@ -39,16 +39,16 @@ module.exports = {
                 include: [path.join(__dirname, 'src')]
             },
             {
-                test: /\.styl$/,
+                test: /\.styl/,
                 use: [
                     {
-                        loader: "style-loader"
+                        loader: `style-loader`
                     },
                     {
-                        loader: "css-loader"
+                        loader: `css-loader`
                     },
                     {
-                        loader: "styles-loader"
+                        loader: `stylus-loader`
                     }
                 ]
             },
