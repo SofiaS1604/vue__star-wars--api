@@ -1,10 +1,10 @@
-import MyGame from '../view/pages/MyGame.vue';
+import MyMain from '../view/pages/MyMain.vue';
 
 const routes = [
     {
-        path: '/game',
+        path: '/',
         name: 'app-first-router',
-        component: MyGame
+        component: MyMain
     },
 ];
 
