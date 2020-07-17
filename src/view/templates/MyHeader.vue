@@ -4,10 +4,10 @@
         <nav class="header__navigation navigation">
             <ul class="navigation__container">
                 <li class="navigation__list">
-                    <navigation-link url="/">Home</navigation-link>
+                    <navigation-link url="/">Main</navigation-link>
                 </li>
                 <li class="navigation__list">
-                    <navigation-link url="/#/game">Characters</navigation-link>
+                    <navigation-link url="/#/characters">Characters</navigation-link>
                 </li>
                 <li class="navigation__list">
                     <navigation-link url="/#/game">Films</navigation-link>
@@ -25,7 +25,6 @@
         </nav>
     </header>
 </template>
-
 <script>
     import NavigationLink from "../atoms/NavigationLink.vue";
 
