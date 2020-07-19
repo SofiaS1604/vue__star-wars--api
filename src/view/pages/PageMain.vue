@@ -1,6 +1,6 @@
 <template>
     <main class="page__main main">
-        <div class="main__image">hi</div>
+        <div class="main__image"></div>
         <div class="main__text">
             Star Wars is an American epic space-opera media franchise created by George Lucas, which began with the
             eponymous 1977 film and quickly became a worldwide pop-culture phenomenon. The franchise has been expanded

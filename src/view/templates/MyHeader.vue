@@ -7,19 +7,19 @@
                     <navigation-link url="/">Main</navigation-link>
                 </li>
                 <li class="navigation__list">
-                    <navigation-link url="/#/people">Characters</navigation-link>
+                    <navigation-link url="/#/people/?page=1">Characters</navigation-link>
                 </li>
                 <li class="navigation__list">
-                    <navigation-link url="/#/game">Films</navigation-link>
+                    <navigation-link url="/#/films/?page=1">Films</navigation-link>
                 </li>
                 <li class="navigation__list">
-                    <navigation-link url="/#/game">Species</navigation-link>
+                    <navigation-link url="/#/species/?page=1">Species</navigation-link>
                 </li>
                 <li class="navigation__list">
-                    <navigation-link url="/#/game">Starships</navigation-link>
+                    <navigation-link url="/#/starships/?page=1">Starships</navigation-link>
                 </li>
                 <li class="navigation__list">
-                    <navigation-link url="/#/game">Planets</navigation-link>
+                    <navigation-link url="/#/planets/?page=1">Planets</navigation-link>
                 </li>
             </ul>
         </nav>
