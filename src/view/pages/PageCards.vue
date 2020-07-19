@@ -2,8 +2,8 @@
     <div class="page__main main">
         <cards-list/>
         <div class="main__buttons buttons">
-            <button class="buttons__next"></button>
-            <button class="buttons__previous"></button>
+            <button class="buttons__next">Next</button>
+            <button class="buttons__previous">Previous</button>
         </div>
     </div>
 </template>

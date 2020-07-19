@@ -3,6 +3,8 @@
   padding: 0
   font-family "Monaco", monospace
 
+@import url('https://fonts.googleapis.com/css2?family=Poller+One&display=swap');
+
 .page
   background-image url('https://sm.ign.com/ign_ru/screenshot/default/ydaaqjnxhlz66zmrz3t58d_c3rb.jpg')
   height 100vh
@@ -31,8 +33,12 @@
 
 .navigation__item
   text-decoration none
-  color white
   font-size 18px
+  font-weight bold
+  font-family: 'Poller One', cursive;
+  background: -webkit-linear-gradient(#b7b7b7, #fff, #b7b7b7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
 .page__main
   margin-left 65px
@@ -54,3 +60,19 @@
   margin-left 50px
   padding 25px
   background-color rgba(1,1,1, 0.5)
+
+.buttons__next, .buttons__previous
+  width 115px
+  font-size 16px
+  padding-top 2.5px
+  padding-bottom: 2.5px;
+  border-radius 5px
+  background-color transparent
+  border 2px solid;
+  border-top-color #acacac
+  border-bottom-color #acacac
+  border-left-color #fff
+  border-right-color #fff
+  color #fff
+  cursor pointer
+  box-shadow 0 4px 9px 0 rgba(0, 0, 0, 0.5)

@@ -1,14 +1,16 @@
 <template>
-    <div class="main__cards">
-
+    <div class="main__cards" v-if="this.result">
+        <h1 v-for="item in this.result">{{item.name}}</h1>
     </div>
 </template>
 
 <script>
     import axios from "axios";
+    import MyCard from "../templates/MyCard.vue";
 
     export default {
         name: "CardsList",
+        components: {MyCard},
         data() {
             return {
                 result: null,
@@ -16,22 +18,15 @@
             }
         },
         methods: {
-            async pageGet() {
-                this.pageCount = this.$route.query.page;
-                return new Promise(async resolve => {
-                    let res = axios
-                        .get(`https://swapi.dev/api${this.$route.path}?page=${this.pageCount}`);
-                    this.result = (await res).data;
-                    resolve()
-                });
-            },
+
         },
-        mounted: function () {
-            this.pageGet()
+        mounted() {
+            this.pageCount = this.$route.query.page;
+            axios
+                .get(`https://swapi.dev/api${this.$route.path}?page=${this.pageCount}`)
+                .then(response => (this.result = response.data.results));
+
+            console.log(this.result);
         },
     }
 </script>
-
-<style scoped>
-
-</style>
