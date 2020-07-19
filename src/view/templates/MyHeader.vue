@@ -7,7 +7,7 @@
                     <navigation-link url="/">Main</navigation-link>
                 </li>
                 <li class="navigation__list">
-                    <navigation-link url="/#/characters">Characters</navigation-link>
+                    <navigation-link url="/#/people">Characters</navigation-link>
                 </li>
                 <li class="navigation__list">
                     <navigation-link url="/#/game">Films</navigation-link>
