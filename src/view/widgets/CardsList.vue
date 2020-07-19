@@ -1,6 +1,6 @@
 <template>
-    <div class="main__cards" v-if="this.result">
-        <h1 v-for="item in this.result">{{item.name}}</h1>
+    <div class="main__cards" v-if="this.result" :key="pageCount">
+        <my-card v-for="item in this.result">{{item.name}}</my-card>
     </div>
 </template>
 
@@ -14,19 +14,14 @@
         data() {
             return {
                 result: null,
-                pageCount: 1,
+                pageCount: 1
             }
-        },
-        methods: {
-
         },
         mounted() {
             this.pageCount = this.$route.query.page;
             axios
                 .get(`https://swapi.dev/api${this.$route.path}?page=${this.pageCount}`)
                 .then(response => (this.result = response.data.results));
-
-            console.log(this.result);
         },
     }
 </script>

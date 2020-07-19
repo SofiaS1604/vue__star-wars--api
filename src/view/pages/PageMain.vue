@@ -20,7 +20,3 @@
         name: "MyMain"
     }
 </script>
-
-<style scoped>
-
-</style>
