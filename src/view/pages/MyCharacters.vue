@@ -8,26 +8,23 @@
         name: "MyCharacters",
         data() {
             return{
-                result: null
+                result: null,
+                k: null
             }
         },
-        mounted() {
-            async function getCharacters(){
+        methods: {
+            async pageGet(){
                 return new Promise(async resolve => {
-                    let res = await axios.get('https://swapi.dev/api/people/?page=1');
-                    res = await res.data;
-                    resolve(await res)
-                })
-            }
-
-
-            async function getData(){
-                let res = await getCharacters();
-                console.log(res);
-            }
-
-            console.log(getData())
-        }
+                    let res =  axios
+                        .get("https://swapi.dev/api/people/?page=1");
+                    this.result = (await res).data;
+                    resolve()
+                });
+            },
+        },
+        mounted: function() {
+            this.pageGet()
+        },
     }
 </script>
 
