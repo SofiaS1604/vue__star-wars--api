@@ -1,6 +1,6 @@
 <template>
     <header class="page__header header">
-        <img src="https://pngimg.com/uploads/star_wars_logo/star_wars_logo_PNG10.png" alt="" class="header__logo" />
+        <img src="https://pngimg.com/uploads/star_wars_logo/star_wars_logo_PNG10.png" alt="" class="header__logo"/>
         <nav class="header__navigation navigation">
             <ul class="navigation__container">
                 <li class="navigation__list">
@@ -36,7 +36,3 @@
         components: componentsList
     }
 </script>
-
-<style scoped>
-
-</style>

@@ -8,7 +8,7 @@ let VueTouch = require('vue-touch');
 
 import style from './style/styles.styl'
 
-Vue.use(VueTouch, { name: 'v-touch' });
+Vue.use(VueTouch, {name: 'v-touch'});
 Vue.use(VueRouter);
 
 const router = new VueRouter({

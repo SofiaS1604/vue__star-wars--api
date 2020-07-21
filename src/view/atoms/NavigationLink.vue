@@ -1,5 +1,7 @@
 <template>
-    <a class="navigation__item" v-if="url" :href="url"><slot/></a>
+    <a class="navigation__item" v-if="url" :href="url">
+        <slot/>
+    </a>
 </template>
 
 <script>

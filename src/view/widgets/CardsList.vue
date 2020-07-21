@@ -1,6 +1,6 @@
 <template>
-    <div class="main__cards" v-if="this.result" :key="pageCount">
-        <my-card v-for="item in this.result">{{item.name}}</my-card>
+    <div class="main__cards" v-if="this.result">
+        <my-card v-for="item in this.result"  :key="item.ident">{{item.name}}</my-card>
     </div>
 </template>
 

@@ -19,13 +19,13 @@
     export default {
         name: "PageCards",
         components: componentsList,
-        data(){
-            return{
+        data() {
+            return {
                 pageCount: 1,
                 maxCount: 0,
             }
         },
-        mounted(){
+        mounted() {
 
         }
     }
