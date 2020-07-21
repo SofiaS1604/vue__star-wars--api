@@ -20,9 +20,7 @@
             }
         },
         mounted() {
-            // console.log(this.cardsList, this.cardsListProps);
             this.cardsList = this.cardsListProps;
-            // console.log(this.cardsList, this.cardsListProps);
         }
     }
 </script>

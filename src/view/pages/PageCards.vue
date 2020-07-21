@@ -1,6 +1,7 @@
 <template>
     <div class="page__main main">
-        <cards-list v-if="this.result" :cardsListProps="this.result.results" :key="this.result.results[0].mass" :pageCount="this.pageCount"/>
+        <cards-list v-if="this.result" :cardsListProps="this.result.results" :key="this.result.results[0].mass"
+                    :pageCount="this.pageCount"/>
         <div class="main__buttons buttons">
             <button-navigation @click.native="clickButton('previous')">Previous</button-navigation>
             <button-navigation @click.native="clickButton('next')">Next</button-navigation>
@@ -22,7 +23,7 @@
         components: componentsList,
         data() {
             return {
-                pageCount: 1,
+                pageCount: +this.$route.query.page,
                 result: null,
             }
         },
@@ -36,21 +37,32 @@
                         page: this.pageCount
                     }
                 }).catch(() => {});
-
-                setTimeout(() => {
-                    this.getPeople();
-                }, 500)
             },
 
-            getPeople() {
+            async getData() {
+                return new Promise(async resolve => {
+                    let res = await axios.get(`https://swapi.dev/api${this.$route.path}?page=${this.pageCount}`);
+                    resolve(await res);
+                });
+            },
+
+            async getPeople() {
                 this.pageCount = +this.$route.query.page;
-                axios
-                    .get(`https://swapi.dev/api${this.$route.path}?page=${this.pageCount}`)
-                    .then(response => this.result = response.data);
-            }
+                this.result = await this.getData().then(res => this.result = res.data);
+                let i = (this.pageCount - 1) * 10;
+
+                this.result.results.forEach(el => {
+                    i++;
+                    if (this.$route.path.split('/')[1] === 'people')
+                        el.image = `https://starwars-visualguide.com/assets/img/characters/${i}.jpg`;
+                    else
+                        el.image = `https://starwars-visualguide.com/assets/img${this.$route.path}${i}.jpg`;
+                })
+
+            },
         },
         watch: {
-            pageCount: function () {
+            pageCount() {
                 this.getPeople();
             }
         },
