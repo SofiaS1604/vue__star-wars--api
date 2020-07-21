@@ -1,6 +1,6 @@
 <template>
     <div class="page__main main">
-        <cards-list/>
+        <cards-list v-if="this.result" :cardsListProps="this.result.results" :key="this.result.results[0].mass" :pageCount="this.pageCount"/>
         <div class="main__buttons buttons">
             <button-navigation @click.native="clickButton('previous')">Previous</button-navigation>
             <button-navigation @click.native="clickButton('next')">Next</button-navigation>
@@ -23,51 +23,39 @@
         data() {
             return {
                 pageCount: 1,
-                result: null
+                result: null,
             }
         },
         methods: {
             clickButton(type) {
-                console.log(2, this.result, type);
-                if (type === 'next' && this.result.next) {
-                    console.log(3);
-                    this.pageCount++;
-                }
+                this.pageCount += type === 'next' && this.result.next ? 1 : 0;
+                this.pageCount -= type === 'previous' && this.result.previous ? 1 : 0;
 
-                if (type === 'previous' && this.results.previous) {
-                    console.log(4);
-                    this.pageCount--;
-                }
-
-                console.log(this.pageCount)
                 this.$router.replace({
                     query: {
                         page: this.pageCount
                     }
-                }).catch(() => {
-                })
+                }).catch(() => {});
+
+                setTimeout(() => {
+                    this.getPeople();
+                }, 500)
             },
 
             getPeople() {
-                console.log(1);
                 this.pageCount = +this.$route.query.page;
                 axios
                     .get(`https://swapi.dev/api${this.$route.path}?page=${this.pageCount}`)
-                    .then(response => (this.result = response.data));
-
+                    .then(response => this.result = response.data);
             }
         },
         watch: {
             pageCount: function () {
-                this.getPeople()
+                this.getPeople();
             }
         },
-
         mounted() {
-            this.pageCount = +this.$route.query.page;
-            axios
-                .get(`https://swapi.dev/api${this.$route.path}?page=${this.pageCount}`)
-                .then(response => (this.result = response.data));
-        }
+            this.getPeople();
+        },
     }
 </script>

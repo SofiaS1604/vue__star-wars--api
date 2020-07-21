@@ -1,27 +1,28 @@
 <template>
-    <div class="main__cards" v-if="this.result">
-        <my-card v-for="item in this.result"  :key="item.ident">{{item.name}}</my-card>
+    <div class="main__cards" v-if="this.cardsList">
+        <my-card v-for="item in this.cardsList" :key="item.ident">{{item.name}}</my-card>
     </div>
 </template>
 
 <script>
-    import axios from "axios";
     import MyCard from "../templates/MyCard.vue";
+
+    const componentsList = {};
+    componentsList[MyCard.name] = MyCard;
 
     export default {
         name: "CardsList",
-        components: {MyCard},
+        components: componentsList,
+        props: ["cardsListProps"],
         data() {
             return {
-                result: null,
-                pageCount: 1
+                cardsList: null,
             }
         },
         mounted() {
-            this.pageCount = this.$route.query.page;
-            axios
-                .get(`https://swapi.dev/api${this.$route.path}?page=${this.pageCount}`)
-                .then(response => (this.result = response.data.results));
-        },
+            // console.log(this.cardsList, this.cardsListProps);
+            this.cardsList = this.cardsListProps;
+            // console.log(this.cardsList, this.cardsListProps);
+        }
     }
 </script>
