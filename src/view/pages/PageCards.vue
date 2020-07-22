@@ -54,7 +54,6 @@
                 this.result.results.forEach((el, index) => {
                     let nameUrl = this.$route.path.split('/')[1] === 'people' ? '/characters/' : this.$route.path;
                     el.i = `https://starwars-visualguide.com/assets/img${nameUrl}${i + index + 1}.jpg`;
-                    console.log(this.result)
                 })
             },
         },
