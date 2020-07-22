@@ -47,18 +47,23 @@
     -webkit-text-fill-color transparent
 
 .buttons__item
-    width 115px
-    font-size 16px
-    padding-top 2.5px
-    padding-bottom 2.5px
-    border-radius 5px
-    background-color transparent
-    border 2px solid #acacac
+  width 115px
+  font-size 16px
+  padding-top 2.5px
+  padding-bottom 2.5px
+  border-radius 5px
+  background-color transparent
+  border 2px solid #acacac
+  color #acacac
+  cursor not-allowed
+  box-shadow 0 4px 9px 0 rgba(0, 0, 0, 0.5)
+  &--active
+    cursor pointer
     border-right-color #fff
     border-left-color #fff
     color #fff
-    cursor pointer
-    box-shadow 0 4px 9px 0 rgba(0, 0, 0, 0.5)
+
+
 
 .main
   &__image
@@ -74,3 +79,6 @@
     padding 25px
     background-color rgba(1, 1, 1, 0.5)
     min-height 424px
+
+button:active, button:focus
+  outline none

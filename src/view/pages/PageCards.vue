@@ -2,9 +2,9 @@
     <div class="page__main main">
         <cards-list v-if="this.result" :cardsListProps="this.result.results" :key="this.result.results[0].mass"
                     :pageCount="this.pageCount"/>
-        <div class="main__buttons buttons">
-            <button-navigation @click.native="clickButton('previous')">Previous</button-navigation>
-            <button-navigation @click.native="clickButton('next')">Next</button-navigation>
+        <div class="main__buttons buttons" v-if="this.result">
+            <button-navigation :class="{'buttons__item--active': this.result.previous}" @click.native="clickButton('previous')">Previous</button-navigation>
+            <button-navigation :class="{'buttons__item--active': this.result.next}" @click.native="clickButton('next')">Next</button-navigation>
         </div>
     </div>
 </template>
@@ -51,14 +51,11 @@
                 this.result = await this.getData().then(res => this.result = res.data);
                 let i = (this.pageCount - 1) * 10;
 
-                this.result.results.forEach(el => {
-                    i++;
-                    if (this.$route.path.split('/')[1] === 'people')
-                        el.image = `https://starwars-visualguide.com/assets/img/characters/${i}.jpg`;
-                    else
-                        el.image = `https://starwars-visualguide.com/assets/img${this.$route.path}${i}.jpg`;
+                this.result.results.forEach((el, index) => {
+                    let nameUrl = this.$route.path.split('/')[1] === 'people' ? '/characters/' : this.$route.path;
+                    el.i = `https://starwars-visualguide.com/assets/img${nameUrl}${i + index + 1}.jpg`;
+                    console.log(this.result)
                 })
-
             },
         },
         watch: {

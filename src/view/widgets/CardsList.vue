@@ -1,6 +1,6 @@
 <template>
-    <div class="main__cards" v-if="this.cardsList">
-        <my-card v-for="item in this.cardsList" :key="item.ident">{{item.name}}</my-card>
+    <div class="main__cards cards" v-if="this.cardsList">
+        <my-card v-for="item in this.cardsList" :cardImage="item" :key="item.image">{{item.name}}</my-card>
     </div>
 </template>
 
