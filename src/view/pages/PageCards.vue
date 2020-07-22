@@ -1,10 +1,13 @@
 <template>
     <div class="page__main main">
-        <cards-list v-if="this.result" :cardsListProps="this.result.results" :key="this.result.results[0].mass"
-                    :pageCount="this.pageCount"/>
+        <cards-list v-if="this.result" :cardsListProps="this.result.results" :key="this.result.results[0].mass"/>
         <div class="main__buttons buttons" v-if="this.result">
-            <button-navigation :class="{'buttons__item--active': this.result.previous}" @click.native="clickButton('previous')">Previous</button-navigation>
-            <button-navigation :class="{'buttons__item--active': this.result.next}" @click.native="clickButton('next')">Next</button-navigation>
+            <button-navigation :class="{'buttons__item--active': this.result.previous}"
+                               @click.native="clickButton('previous')">Previous
+            </button-navigation>
+            <button-navigation :class="{'buttons__item--active': this.result.next}" @click.native="clickButton('next')">
+                Next
+            </button-navigation>
         </div>
     </div>
 </template>
@@ -25,6 +28,7 @@
             return {
                 pageCount: +this.$route.query.page,
                 result: null,
+                images: []
             }
         },
         methods: {
@@ -36,7 +40,8 @@
                     query: {
                         page: this.pageCount
                     }
-                }).catch(() => {});
+                }).catch(() => {
+                });
             },
 
             async getData() {
@@ -49,12 +54,6 @@
             async getPeople() {
                 this.pageCount = +this.$route.query.page;
                 this.result = await this.getData().then(res => this.result = res.data);
-                let i = (this.pageCount - 1) * 10;
-
-                this.result.results.forEach((el, index) => {
-                    let nameUrl = this.$route.path.split('/')[1] === 'people' ? '/characters/' : this.$route.path;
-                    el.i = `https://starwars-visualguide.com/assets/img${nameUrl}${i + index + 1}.jpg`;
-                })
             },
         },
         watch: {
