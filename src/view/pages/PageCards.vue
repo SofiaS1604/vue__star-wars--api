@@ -1,6 +1,6 @@
 <template>
     <div class="page__main main">
-        <cards-list v-if="this.result" :cardsListProps="this.result.results" :key="this.pageCount"/>
+        <cards-list v-if="this.result" :cardsListProps="this.result.results" :key="this.keyCount"/>
         <div class="main__buttons buttons" v-if="this.result">
             <button-navigation :class="{'buttons__item--active': this.result.previous}"
                                @click.native="clickButton('previous')">Previous
@@ -28,7 +28,8 @@
             return {
                 pageCount: +this.$route.query.page,
                 result: null,
-                images: []
+                images: [],
+                keyCount: 1,
             }
         },
         methods: {
@@ -54,6 +55,7 @@
             async getPeople() {
                 this.pageCount = +this.$route.query.page;
                 this.result = await this.getData().then(res => this.result = res.data);
+                this.keyCount = this.pageCount
             },
         },
         watch: {
