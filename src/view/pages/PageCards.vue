@@ -53,7 +53,6 @@
             },
 
             async getPeople() {
-                this.pageCount = +this.$route.query.page;
                 this.result = await this.getData().then(res => this.result = res.data);
                 this.keyCount = this.pageCount
             },
