@@ -14,9 +14,9 @@
             }
         },
         mounted() {
-            // console.log(this.cardImage);
             this.pageCount = +this.$route.query.page;
 
+            // (this.cardImage + 1 < 17 ? this.cardImage++ : this.cardImage += 2)
             let nameUrl = this.$route.path.split('/')[1] === 'people' ? '/characters/' : this.$route.path;
             this.image = `https://starwars-visualguide.com/assets/img${nameUrl}${(this.pageCount - 1) * 10 + this.cardImage + 1}.jpg`;
         }

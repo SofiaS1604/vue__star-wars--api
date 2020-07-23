@@ -1,6 +1,6 @@
 <template>
     <div class="page__main main">
-        <cards-list v-if="this.result" :cardsListProps="this.result.results" :key="this.result.results[0].mass"/>
+        <cards-list v-if="this.result" :cardsListProps="this.result.results" :key="this.pageCount"/>
         <div class="main__buttons buttons" v-if="this.result">
             <button-navigation :class="{'buttons__item--active': this.result.previous}"
                                @click.native="clickButton('previous')">Previous

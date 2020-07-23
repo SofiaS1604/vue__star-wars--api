@@ -1,7 +1,7 @@
 <template>
     <div class="page">
         <my-header/>
-        <router-view/>
+        <router-view :key="$route.path"/>
     </div>
 </template>
 <script>
