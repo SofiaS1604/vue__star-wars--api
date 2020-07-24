@@ -19,6 +19,9 @@
                     <navigation-link url="/#/starships/?page=1">Starships</navigation-link>
                 </li>
                 <li class="navigation__list">
+                    <navigation-link url="/#/vehicles/?page=1">Vehicles</navigation-link>
+                </li>
+                <li class="navigation__list">
                     <navigation-link url="/#/planets/?page=1">Planets</navigation-link>
                 </li>
             </ul>
