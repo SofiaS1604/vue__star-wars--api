@@ -19,12 +19,12 @@
     align-items center
     padding 0 65px
   &__main
-    margin-left 65px
-    margin-top 75px
-    margin-bottom 75px
+    margin-left 35px
+    margin-top 50px
+    margin-bottom 50px
     display grid
-    grid-auto-flow column
-    margin-right 65px
+    grid-auto-flow row
+    margin-right 35px
 
 .header__logo
   height 70px
@@ -79,7 +79,38 @@
     padding 25px
     background-color rgba(1, 1, 1, 0.5)
     min-height 424px
+  &__buttons
+    margin-top 35px
+    justify-content center
+    display grid
+    grid-auto-flow column
+    grid-column-gap 25px
+
 
 button:active, button:focus
   outline none
 
+.cards
+  display grid
+  grid-template-columns repeat(auto-fill, 235px)
+  grid-column-gap 35px
+  grid-row-gap 25px
+  justify-content center
+  &__block
+    width 235px
+    height 300px
+    border-radius 7px
+    background-size cover
+    background-position center
+    box-shadow 0 5px 15px rgba(1, 1, 1, 1)
+  &__title
+    color white
+    height 55px
+    margin-top calc(300px - 55px)
+    display flex
+    align-items center
+    justify-content center
+    text-align center
+    background-color rgba(1,1,1, 0.5)
+    border-bottom-left-radius 7px
+    border-bottom-right-radius 7px
