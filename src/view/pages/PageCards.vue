@@ -1,5 +1,5 @@
 <template>
-    <div class="page__main main">
+    <div class="page__main main__card">
         <cards-list v-if="this.result" :cardsListProps="this.result.results" :key="this.keyCount"/>
         <div class="main__buttons buttons" v-if="this.result">
             <button-navigation :class="{'buttons__item--active': this.result.previous}"

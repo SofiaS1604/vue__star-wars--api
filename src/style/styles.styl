@@ -23,7 +23,7 @@
     margin-top 50px
     margin-bottom 50px
     display grid
-    grid-auto-flow row
+    grid-auto-flow column
     margin-right 35px
 
 .header__logo
@@ -79,12 +79,15 @@
     padding 25px
     background-color rgba(1, 1, 1, 0.5)
     min-height 424px
+    width calc(100vw - 524px)
   &__buttons
     margin-top 65px
     justify-content center
     display grid
     grid-auto-flow column
     grid-column-gap 25px
+  &__card
+    grid-auto-flow row
 
 
 button:active, button:focus
@@ -115,3 +118,25 @@ button:active, button:focus
     background-color rgba(1,1,1, 0.5)
     border-bottom-left-radius 7px
     border-bottom-right-radius 7px
+
+.card
+  display grid
+  grid-auto-flow column
+  justify-content: center;
+  &__image
+    width 400px
+    height 581px
+    background-size cover
+    box-shadow 0 5px 15px rgba(1, 1, 1, 1)
+    background-position center
+  &__container
+    color white
+    box-shadow 0 5px 15px rgba(1, 1, 1, 1)
+    margin-left 50px
+    padding 25px
+    background-color rgba(1, 1, 1, 0.5)
+    min-height 424px
+    width 500px
+  &__info
+    font-size 18px
+    margin-bottom 7px

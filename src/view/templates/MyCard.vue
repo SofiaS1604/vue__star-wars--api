@@ -47,16 +47,21 @@
 
             this.image = `https://starwars-visualguide.com/assets/img${nameUrl}${this.idImage}.jpg`;
 
-            for(let item in this.cardItem){
-                if(typeof this.cardItem[item] !== 'object' && item !== 'url')
+            for (let item in this.cardItem) {
+                if (typeof this.cardItem[item] !== 'object' && item !== 'url' && item !== 'homeworld')
                     this.dataItem[item] = this.cardItem[item]
             }
-
-            this.dataItem['image'] = this.image;
         },
         methods: {
-            routerPage(){
-                this.$router.push({ name: `${this.$route.path.split('/')[1]}Id`, params: {data: this.dataItem, id: this.idImage} })
+            routerPage() {
+                this.$router.push({
+                    name: `${this.$route.path.split('/')[1]}Id`,
+                    params: {
+                        dataInfo: this.dataItem,
+                        dataImage: this.image,
+                        id: this.idImage
+                    }
+                })
             }
         }
     }
