@@ -3,7 +3,8 @@
         <cards-list v-if="this.result" :cardsListProps="this.result.results" :key="this.keyCount"/>
         <div class="main__buttons buttons" v-if="this.result">
             <button-navigation :class="{'buttons__item--active': this.result.previous}"
-                               @click.native="clickButton('previous')">Previous
+                               @click.native="clickButton('previous')">
+                Previous
             </button-navigation>
             <button-navigation :class="{'buttons__item--active': this.result.next}" @click.native="clickButton('next')">
                 Next

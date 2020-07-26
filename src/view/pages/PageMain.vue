@@ -13,7 +13,6 @@
             fifth-highest-grossing media franchise of all time.
         </div>
     </main>
-
 </template>
 
 <script>
