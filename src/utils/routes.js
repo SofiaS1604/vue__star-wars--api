@@ -1,71 +1,78 @@
 import PageMain from '../view/pages/PageMain.vue';
 import PageCards from "../view/pages/PageCards.vue";
+import PageInfo from "../view/pages/PageInfo.vue";
 
 const routes = [
     {
         path: '/',
-        name: 'page-main',
+        name: 'main',
         component: PageMain
     },
     {
         path: '/people',
-        name: 'page-people',
+        name: 'people',
         component: PageCards
     },
     {
         path: '/people/:id',
-        name: 'page-characters',
-        component: PageCards
+        name: 'peopleId',
+        component: PageInfo,
+        props: true
     },
     {
         path: '/films',
-        name: 'page-films',
+        name: 'films',
         component: PageCards
     },
     {
         path: '/films/:id',
-        name: 'page-films',
-        component: PageCards
+        name: 'filmsId',
+        component: PageInfo,
+        props: true
     },
     {
         path: '/species',
-        name: 'page-species',
+        name: 'species',
         component: PageCards
     },
     {
         path: '/species/:id',
-        name: 'page-species',
-        component: PageCards
+        name: 'speciesId',
+        component: PageInfo,
+        props: true
     },
     {
         path: '/starships',
-        name: 'page-starships',
+        name: 'starships',
         component: PageCards
     },
     {
         path: '/starships/:id',
-        name: 'page-starships',
-        component: PageCards
+        name: 'starshipsId',
+        component: PageInfo,
+        props: true
     },
     {
         path: '/vehicles',
-        name: 'page-vehicles',
+        name: 'vehicles',
         component: PageCards
     },
     {
         path: '/vehicles/:id',
-        name: 'page-vehicles',
-        component: PageCards
+        name: 'vehiclesId',
+        component: PageInfo,
+        props: true
     },
     {
         path: '/planets',
-        name: 'page-planets',
+        name: 'planets',
         component: PageCards
     },
     {
         path: '/planets/:id',
-        name: 'page-planets',
-        component: PageCards
+        name: 'planetsId',
+        component: PageInfo,
+        props: true
     },
 ];
 

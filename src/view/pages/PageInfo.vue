@@ -1,9 +1,8 @@
 <template>
-    
 </template>
 
 <script>
     export default {
-        name: "PagePlanet"
+        name: "PageInfo"
     }
 </script>
