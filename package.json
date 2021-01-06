@@ -43,7 +43,7 @@
   "dependencies": {
     "connect-history-api-fallback": "^1.6.0",
     "vue-router": "^3.3.4",
-    "axios": "^0.19.2"
+    "axios": "^0.21.1"
   },
   "bugs": {
     "url": "https://github.com/SofiaS1604/vue__swapi/issues"
